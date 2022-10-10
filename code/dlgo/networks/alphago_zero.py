@@ -80,7 +80,7 @@ def conv_bn_relu_block(name, activation=True, filters=256, kernel_size=(3,3),
                       strides=strides,
                       padding=padding,
                       kernel_initializer=init,
-                      data_format='channels_first',
+                      data_format='channels_last',
                       name="{}_conv_block".format(name))(inputs)
         batch_norm = BatchNormalization(axis=1, name="{}_batch_norm".format(name))(conv)
         return Activation("relu", name="{}_relu".format(name))(batch_norm) if activation else batch_norm

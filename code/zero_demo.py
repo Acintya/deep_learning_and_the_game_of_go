@@ -42,12 +42,12 @@ pb = board_input
 for i in range(4):                     # <1>
     pb = Conv2D(64, (3, 3),            # <1>
         padding='same',                # <1>
-        data_format='channels_first',  # <1>
+        data_format='channels_last',  # <1>
         activation='relu')(pb)         # <1>
 
 policy_conv = \                                         # <2>
     Conv2D(2, (1, 1),                                   # <2>
-        data_format='channels_first',                   # <2>
+        data_format='channels_last',                   # <2>
         activation='relu')(pb)                          # <2>
 policy_flat = Flatten()(policy_conv)                    # <2>
 policy_output = \                                       # <2>
@@ -56,7 +56,7 @@ policy_output = \                                       # <2>
 
 value_conv = \                                           # <3>
     Conv2D(1, (1, 1),                                    # <3>
-        data_format='channels_first',                    # <3>
+        data_format='channels_last',                    # <3>
         activation='relu')(pb)                           # <3>
 value_flat = Flatten()(value_conv)                       # <3>
 value_hidden = Dense(256, activation='relu')(value_flat) # <3>
