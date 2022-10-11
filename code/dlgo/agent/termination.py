@@ -23,8 +23,9 @@ class TerminationStrategy:
 class PassWhenOpponentPasses(TerminationStrategy):
 
     def should_pass(self, game_state):
-        if game_state.last_move is not None:
-            return True if game_state.last_move.is_pass else False
+        #if game_state.last_move is not None:
+        #    return True if game_state.last_move.is_pass else False
+        return False
 # end::opponent_passes[]
 
 
