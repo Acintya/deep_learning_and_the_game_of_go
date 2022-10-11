@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/home/ubuntu/anaconda3/envs/dlgo38/bin/python
 from dlgo.gtp import GTPFrontend
 from dlgo.agent.predict import load_prediction_agent
 from dlgo.agent import termination
